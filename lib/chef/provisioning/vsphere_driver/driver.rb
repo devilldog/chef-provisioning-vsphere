@@ -188,9 +188,9 @@ module ChefProvisioningVsphere
       bootstrap_options.to_hash.each_pair do |key,value|
         if value.is_a?(Hash) then
           temp_value = value.clone
-          value.has_key?(:password)  ? temp_value[:password] = "*********" : temp_value = value
+          temp_value[:password] = "*********" if value.has_key?(:password)
         end
-        description << "  #{key}: #{value.inspect}"
+        description << "  #{key}: #{temp_value.inspect}"
       end
       description
     end
