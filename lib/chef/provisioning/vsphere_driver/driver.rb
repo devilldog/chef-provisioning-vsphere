@@ -108,7 +108,7 @@ module ChefProvisioningVsphere
     #
     #           -- provisioner_url: vsphere:host:port?ssl=[true|false]&insecure=[true|false]
     #           -- vm_folder: name of the vSphere folder containing the VM
-    #
+    ##
     def allocate_machine(action_handler, machine_spec, machine_options)
       merge_options! machine_options
 
